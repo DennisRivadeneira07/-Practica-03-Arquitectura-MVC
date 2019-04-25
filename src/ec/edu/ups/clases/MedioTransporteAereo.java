@@ -16,14 +16,8 @@ public class MedioTransporteAereo implements Comparable<MedioTransporteAereo> {
     private String costoDeVuelo;
     private int numeroTripulantes;
     private String alturaDeVuelo;
-
-    public MedioTransporteAereo(int codigo, int numroPasajeros, String costoDeVuelo, int numeroTripulantes, String alturaDeVuelo) {
-        this.codigo = codigo;
-        this.numroPasajeros = numroPasajeros;
-        this.costoDeVuelo = costoDeVuelo;
-        this.numeroTripulantes = numeroTripulantes;
-        this.alturaDeVuelo = alturaDeVuelo;
-    }
+    
+  
 
     public MedioTransporteAereo(String costoDeVuelo, String alturaDeVuelo) {
         this.alturaDeVuelo = alturaDeVuelo;
@@ -74,30 +68,16 @@ public class MedioTransporteAereo implements Comparable<MedioTransporteAereo> {
         return alturaDeVuelo;
     }
 
-    public String volar() {
-        return "La aeronave con altura de vuelo de  " + this.getAlturaDeVuelo() + " está volando";
-    }
-
-    public String aterrizar() {
-        return "La aeronave con altura de vuelo de" + this.getAlturaDeVuelo() + "esta aterrizando";
-    }
-
-    public String despegando() {
-        return "La aeronave con altura de vuelo de" + this.getAlturaDeVuelo() + "esta volando";
-    }
-
     @Override
     public String toString() {
         return "MedioTransporteAereo{" + "codigo=" + codigo + ", numroPasajeros=" + numroPasajeros + ", costoDeVuelo=" + costoDeVuelo + ", numeroTripulantes=" + numeroTripulantes + ", alturaDeVuelo=" + alturaDeVuelo + '}';
     }
-
     @Override
     public int hashCode() {
         int hash = 9;
         hash = 60 * hash + this.codigo;
         return hash;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

@@ -10,5 +10,6 @@ package ec.edu.ups.interfaces;
  * @author LENOVO
  */
 public interface Acciones {
-    
+    public abstract String despegar();
+    public abstract String volar();
 }
