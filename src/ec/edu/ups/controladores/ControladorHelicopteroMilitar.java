@@ -4,17 +4,11 @@
  * and open the template in the editor.
  */
 package ec.edu.ups.controladores;
-
 import ec.edu.ups.clases.HelicopteroMilitar;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author LENOVO
- */
 public class ControladorHelicopteroMilitar {
-
     private List<HelicopteroMilitar> lista;
     private int codigo;
 
@@ -22,13 +16,11 @@ public class ControladorHelicopteroMilitar {
         lista = new ArrayList<>();
         codigo = 1;
     }
-
     public void create(HelicopteroMilitar objeto) {
         objeto.setCodigo(codigo);
         codigo++;
         lista.add(objeto);
     }
-
     public HelicopteroMilitar read(int codigo) {
         for (HelicopteroMilitar helicopteroMilitar : lista) {
             if (helicopteroMilitar.getCodigo() == codigo) {
@@ -37,7 +29,6 @@ public class ControladorHelicopteroMilitar {
         }
         return null;
     }
-
     public void update(HelicopteroMilitar objeto) {
         for (int i = 0; i < lista.size(); i++) {
             HelicopteroMilitar elemento = lista.get(i);
@@ -47,7 +38,6 @@ public class ControladorHelicopteroMilitar {
             }
         }
     }
-
     public void delete(int codigo) {
         for (int i = 0; i < lista.size(); i++) {
             HelicopteroMilitar elemento = lista.get(i);
