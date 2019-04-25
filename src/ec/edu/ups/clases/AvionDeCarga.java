@@ -72,12 +72,13 @@ public final class AvionDeCarga extends Avion implements Acciones {
 
     @Override
     public String despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "El Avion De Carga con un vuelo de   " + super.getAlturaDeVuelo() + " esta despegando";
     }
+                
 
     @Override
     public String volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "El Avion De Carga con una altura de vuelo de  " + super.getAlturaDeVuelo() + " está volando";
     }
      
 }

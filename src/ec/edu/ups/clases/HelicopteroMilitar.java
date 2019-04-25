@@ -11,8 +11,9 @@ import ec.edu.ups.interfaces.Acciones;
  *
  * @author LENOVO
  */
-public final class HelicopteroMilitar extends Helicoptero implements Acciones  {
-     private int numeroArmasEquipadasUnidades;
+public final class HelicopteroMilitar extends Helicoptero implements Acciones {
+
+    private int numeroArmasEquipadasUnidades;
     private String tipoHelicopteroMilitar;
     private String nombreFrancoTirador;
     private int cantidadDeMilitaresTransportados;
@@ -62,17 +63,21 @@ public final class HelicopteroMilitar extends Helicoptero implements Acciones  {
 
     @Override
     public String toString() {
-        return super.toString() +"HelicopteroMilitar{" + "numeroArmasEquipadasUnidades=" + numeroArmasEquipadasUnidades + ", tipoHelicopteroMilitar=" + tipoHelicopteroMilitar + ", nombreFrancoTirador=" + nombreFrancoTirador + ", cantidadDeMilitaresTransportados=" + cantidadDeMilitaresTransportados + '}';
+        return super.toString() + "HelicopteroMilitar{" + "numeroArmasEquipadasUnidades=" + numeroArmasEquipadasUnidades + ", tipoHelicopteroMilitar=" + tipoHelicopteroMilitar + ", nombreFrancoTirador=" + nombreFrancoTirador + ", cantidadDeMilitaresTransportados=" + cantidadDeMilitaresTransportados + '}';
     }
 
     @Override
     public String despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return "El Helicoptero  Militar con una altura de vuelo de  " + super.getAlturaDeVuelo() + " está despegando";
+
     }
 
     @Override
     public String volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return "El Helicoptero Militar con una altura de vuelo de  " + super.getAlturaDeVuelo() + " está volando";
+
     }
-    
+
 }

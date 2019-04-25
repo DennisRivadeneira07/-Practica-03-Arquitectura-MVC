@@ -12,7 +12,7 @@ import ec.edu.ups.interfaces.Acciones;
  * @author LENOVO
  */
 public final class AvionMilitar extends Avion implements Acciones {
-     
+
     private String pesoArmas;
     private int nuemeroArmasEnUnidades;
     private String tipoDeArmas;
@@ -64,17 +64,20 @@ public final class AvionMilitar extends Avion implements Acciones {
 
     @Override
     public String toString() {
-        return super.toString()+"AvionMilitar{" + "pesoArmas=" + pesoArmas + ", nuemeroArmasEnUnidades=" + nuemeroArmasEnUnidades + ", tipoDeArmas=" + tipoDeArmas + ", nombreDeFrancoTirador=" + nombreDeFrancoTirador + '}';
+        return super.toString() + "AvionMilitar{" + "pesoArmas=" + pesoArmas + ", nuemeroArmasEnUnidades=" + nuemeroArmasEnUnidades + ", tipoDeArmas=" + tipoDeArmas + ", nombreDeFrancoTirador=" + nombreDeFrancoTirador + '}';
     }
 
     @Override
     public String despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "El Avion Militar con una altura de vuelo de  " + super.getAlturaDeVuelo() + " está despegando";
+
     }
 
     @Override
     public String volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return "El Avion Militar con una altura de vuelo de  " + super.getAlturaDeVuelo() + " está volando";
+
     }
-    
+
 }

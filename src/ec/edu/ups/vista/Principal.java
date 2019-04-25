@@ -5,6 +5,8 @@
  */
 package ec.edu.ups.vista;
 
+import ec.edu.ups.clases.AvionDeCarga;
+import ec.edu.ups.clases.AvionMilitar;
 import ec.edu.ups.clases.HelicopteroGrua;
 import ec.edu.ups.clases.HelicopteroMilitar;
 import ec.edu.ups.controladores.ControladorAvionDeCarga;
@@ -98,6 +100,8 @@ public class Principal {
                                     altVuel = escaner.next();
                                     objeto = new HelicopteroMilitar(NumeroDeArmasEquipadas, tipoDeHelicopteroMilitar, nombreFrancotirador, cantiMilitares, numHeli, codPatin, codAl, rotAnt, costVuel, altVuel);
                                     controladorHelicopteroMilitar.update(objeto);
+                                    objeto.setCodigo(codigo2);
+
                                 } else {
                                     System.out.println("Helicoptero militar no existe ");
                                 }
@@ -143,7 +147,7 @@ public class Principal {
                                 String costVuel = escaner.next();
                                 System.out.println("Ingrese Altura de vuelo");
                                 String altVuel = escaner.next();
-                                HelicopteroGrua objeto = new HelicopteroGrua(largoCable,capGrua,numGrua,tamGncho,numHeli,codPatin,codAl,rotAnt,altVuel,costVuel);
+                                HelicopteroGrua objeto = new HelicopteroGrua(largoCable, capGrua, numGrua, tamGncho, numHeli, codPatin, codAl, rotAnt, altVuel, costVuel);
                                 controladorHelicopteroGrua.create(objeto);
                                 break;
                             case 2:
@@ -151,32 +155,34 @@ public class Principal {
                                 int codigo2 = escaner.nextInt();
                                 System.out.println(controladorHelicopteroGrua.read(codigo2));
                                 break;
-                                case 3:
+                            case 3:
                                 System.out.println("Ingrese el codigo del Helicoptero Grua");
                                 codigo2 = escaner.nextInt();
                                 if (controladorHelicopteroGrua.read(codigo2) != null) {
-                                System.out.println("Ingrese el Largo del clable de la grua");
-                                largoCable = escaner.next();
-                                System.out.println("Ingrese la capacidad de la grua");
-                                capGrua = escaner.next();
-                                System.out.println("Ingrese el número de gruas que contiene el helicoptero");
-                                numGrua = escaner.nextInt();
-                                System.out.println("Ingrese el tamaño del gancho de la grua");
-                                tamGncho = escaner.next();
-                                System.out.println("Ingrese el número de helices que contiene el helicoptero");
-                                numHeli = escaner.nextInt();
-                                System.out.println("Codigo del patin de Aterrizaje");
-                                codPatin = escaner.nextInt();
-                                System.out.println("Codigo Aleta de Desviación");
-                                codAl = escaner.nextInt();
-                                System.out.println("Ingrese marca de Rotor Antipar");
-                                rotAnt = escaner.next();
-                                System.out.println("Ingrese costo de vuelo");
-                                costVuel = escaner.next();
-                                System.out.println("Ingrese Altura de vuelo");
-                                altVuel = escaner.next();
-                                objeto = new HelicopteroGrua(largoCable,capGrua,numGrua,tamGncho,numHeli,codPatin,codAl,rotAnt,costVuel,altVuel);
-                                controladorHelicopteroGrua.update(objeto);
+                                    System.out.println("Ingrese el Largo del clable de la grua");
+                                    largoCable = escaner.next();
+                                    System.out.println("Ingrese la capacidad de la grua");
+                                    capGrua = escaner.next();
+                                    System.out.println("Ingrese el número de gruas que contiene el helicoptero");
+                                    numGrua = escaner.nextInt();
+                                    System.out.println("Ingrese el tamaño del gancho de la grua");
+                                    tamGncho = escaner.next();
+                                    System.out.println("Ingrese el número de helices que contiene el helicoptero");
+                                    numHeli = escaner.nextInt();
+                                    System.out.println("Codigo del patin de Aterrizaje");
+                                    codPatin = escaner.nextInt();
+                                    System.out.println("Codigo Aleta de Desviación");
+                                    codAl = escaner.nextInt();
+                                    System.out.println("Ingrese marca de Rotor Antipar");
+                                    rotAnt = escaner.next();
+                                    System.out.println("Ingrese costo de vuelo");
+                                    costVuel = escaner.next();
+                                    System.out.println("Ingrese Altura de vuelo");
+                                    altVuel = escaner.next();
+                                    objeto = new HelicopteroGrua(largoCable, capGrua, numGrua, tamGncho, numHeli, codPatin, codAl, rotAnt, costVuel, altVuel);
+                                    controladorHelicopteroGrua.update(objeto);
+                                    objeto.setCodigo(codigo2);
+
                                 } else {
                                     System.out.println("El Helicoptero Grua no existe");
                                 }
@@ -196,12 +202,175 @@ public class Principal {
                     } while (repetir);
 
                     break;
-                                
-                        }
+                case 3:
+                    boolean repetirAvionMilitar = true;
+                    do {
+                        System.out.println("Elija una opcion:\n1) Create\n2) Read\n3) Update\n4) Delete\n5) Listar\n6) Regresar");
+                        int opcionAvionMilitar = escaner.nextInt();
+                        switch (opcionAvionMilitar) {
+                            case 1:
+                                System.out.println("Ingrese peso en armas ");
+                                String pesoArm = escaner.next();
+                                System.out.println("Ingrese numero de armas en  unidades ");
+                                int numArm = escaner.nextInt();
+                                System.out.println("Ingrese cual es el tipo de armas");
+                                String tipArm = escaner.next();
+                                System.out.println("Ingrese nombre del Francotirador del Avión");
+                                String nomFranc = escaner.next();
+                                System.out.println("Ingrese número de alas");
+                                int numAlas = escaner.nextInt();
+                                System.out.println("Ingrese número de azafatas");
+                                int numAz = escaner.nextInt();
+                                System.out.println("Ingrese numero de Horas De Servicio De Comida");
+                                String horaSer = escaner.next();
+                                System.out.println("Ingrese en que clase desea viajar");
+                                String clase = escaner.next();
+                                System.out.println("Ingrese el costo de Vuelo");
+                                String costo = escaner.next();
+                                System.out.println("Ingrese Altura de Vuelo");
+                                String altura = escaner.next();
+                                AvionMilitar objeto = new AvionMilitar(pesoArm, numArm, tipArm, nomFranc, numAlas, numAz, horaSer, clase, costo, altura);
+                                controladorAvionMilitar.create(objeto);
+                                break;
+                            case 2:
+                                System.out.println("Ingrese el codigo del   Avion Militar");
+                                int codigo2 = escaner.nextInt();
+                                System.out.println(controladorAvionMilitar.read(codigo2));
+                                break;
+                            case 3:
+                                System.out.println("Ingrese el codigo del Avion Militar");
+                                codigo2 = escaner.nextInt();
+                                if (controladorAvionMilitar.read(codigo2) != null) {
+                                    System.out.println("Ingrese peso en armas ");
+                                    pesoArm = escaner.next();
+                                    System.out.println("Ingrese numero de armas en  unidades ");
+                                    numArm = escaner.nextInt();
+                                    System.out.println("Ingrese cual es el tipo de armas");
+                                    tipArm = escaner.next();
+                                    System.out.println("Ingrese nombre del Francotirador del Avión");
+                                    nomFranc = escaner.next();
+                                    System.out.println("Ingrese número de alas");
+                                    numAlas = escaner.nextInt();
+                                    System.out.println("Ingrese número de azafatas");
+                                    numAz = escaner.nextInt();
+                                    System.out.println("Ingrese numero de Horas De Servicio De Comida");
+                                    horaSer = escaner.next();
+                                    System.out.println("Ingrese en que clase desea viajar");
+                                    clase = escaner.next();
+                                    System.out.println("Ingrese el costo de Vuelo");
+                                    costo = escaner.next();
+                                    System.out.println("Ingrese Altura de Vuelo");
+                                    altura = escaner.next();
+                                    objeto = new AvionMilitar(pesoArm, numArm, tipArm, nomFranc, numAlas, numAz, horaSer, clase, costo, altura);
+                                    objeto.setCodigo(codigo2);
+                                    controladorAvionMilitar.update(objeto);
 
-                    }
-                    
-                    
-            
-                    }
-        
+                                } else {
+                                    System.out.println("El Avion Militar no existe ");
+                                }
+                                break;
+                            case 4:
+                                System.out.println("Ingrese el codigo del Avion Militar que va a eliminar");
+                                codigo2 = escaner.nextInt();
+                                controladorAvionMilitar.delete(codigo2);
+                                break;
+                            case 5:
+                                controladorAvionMilitar.imprimir();
+                                break;
+                            case 6:
+                                repetirAvionMilitar = false;
+                                break;
+                        }
+                    } while (repetirAvionMilitar);
+
+                    break;
+                case 4:
+                    boolean repetirAvionDeCarga = true;
+                    do {
+                        System.out.println("Elija una opcion:\n1) Create\n2) Read\n3) Update\n4) Delete\n5) Listar\n6) Regresar");
+                        int opcionAvionDeCarga = escaner.nextInt();
+                        switch (opcionAvionDeCarga) {
+                            case 1:
+                                System.out.println("Ingrese peso de la carga ");
+                                String pesoCarga = escaner.next();
+                                System.out.println("Ingrese cantidad de carga en unidades");
+                                int carga = escaner.nextInt();
+                                System.out.println("Ingrese tipo de carga");
+                                String tipCarg = escaner.next();
+                                System.out.println("Ingrese codigo de carga");
+                                int codCar = escaner.nextInt();
+                                System.out.println("Ingrese número de alas");
+                                int numAl = escaner.nextInt();
+                                System.out.println("Número de azafatas ");
+                                int numAza = escaner.nextInt();
+                                System.out.println("Ingrese las horas de servio de comida");
+                                String numHoras = escaner.next();
+                                System.out.println("Ingrese la categoria en la que desea viajar");
+                                String cat = escaner.next();
+                                System.out.println("Ingrese costo de vuelo");
+                                String cost = escaner.next();
+                                System.out.println("Ingrese altura de vuelo");
+                                String altu = escaner.next();
+                                AvionDeCarga objeto = new AvionDeCarga(pesoCarga, carga, tipCarg, codCar, numAl, numAza, numHoras, cat, cost, altu);
+                                controladorAvionDeCarga.create(objeto);
+                                break;
+                            case 2:
+                                System.out.println("Ingrese el codigo del Avion de Carga");
+                                int codigo2 = escaner.nextInt();
+                                System.out.println(controladorAvionDeCarga.read(codigo2));
+                                break;
+                            case 3:
+                                System.out.println("Ingrese el codigo de Avion de Carga");
+                                codigo2 = escaner.nextInt();
+                                if (controladorAvionDeCarga.read(codigo2) != null) {
+                                    System.out.println("Ingrese peso de la carga ");
+                                    pesoCarga = escaner.next();
+                                    System.out.println("Ingrese cantidad de carga en unidades");
+                                    carga = escaner.nextInt();
+                                    System.out.println("Ingrese tipo de carga");
+                                    tipCarg = escaner.next();
+                                    System.out.println("Ingrese codigo de carga");
+                                    codCar = escaner.nextInt();
+                                    System.out.println("Ingrese número de alas");
+                                    numAl = escaner.nextInt();
+                                    System.out.println("Número de azafatas ");
+                                    numAza = escaner.nextInt();
+                                    System.out.println("Ingrese las horas de servio de comida");
+                                    numHoras = escaner.next();
+                                    System.out.println("Ingrese la categoria en la que desea viajar");
+                                    cat = escaner.next();
+                                    System.out.println("Ingrese costo de vuelo");
+                                    cost = escaner.next();
+                                    System.out.println("Ingrese altura de vuelo");
+                                    altu = escaner.next();
+                                    objeto = new AvionDeCarga(pesoCarga, carga, tipCarg, codCar, numAl, numAza, numHoras, cat, cost, altu);
+                                    objeto.setCodigo(codigo2);
+                                    controladorAvionDeCarga.update(objeto);
+                                } else {
+                                    System.out.println("El Avion  de Carga no existe");
+                                }
+                                break;
+                            case 4:
+                                System.out.println("Ingrese el codigo del Avion de Carga que va a eliminar");
+                                codigo2 = escaner.nextInt();
+                                controladorAvionDeCarga.delete(codigo2);
+                                break;
+                            case 5:
+                                controladorAvionDeCarga.imprimir();
+                                break;
+                            case 6:
+                                repetirAvionDeCarga = false;
+                                break;
+                        }
+                    } while (repetirAvionDeCarga);
+
+                    break;
+                case 5:
+                    repetir = false;
+
+            }
+
+        } while (repetir);
+    }
+
+}

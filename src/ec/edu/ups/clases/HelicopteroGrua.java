@@ -29,6 +29,10 @@ public final class HelicopteroGrua extends Helicoptero implements Acciones {
         this.tamañoGanchoGrua = tamañoGanchoGrua;
     }
 
+    public HelicopteroGrua(String largoCable, int codAl, String capGrua, int numGrua, String tamGncho, int numHeli, int codPatin, int codPatin0, String rotAnt, String costVuel, String altVuel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setLargoCableGrua(String LargoCableGrua) {
         this.LargoCableGrua = LargoCableGrua;
     }
@@ -68,12 +72,12 @@ public final class HelicopteroGrua extends Helicoptero implements Acciones {
 
     @Override
     public String despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       return "EL Helicoptero  Grua con un costo de  " + super.getCostoDeVuelo() + " está despegando";
+     }
 
     @Override
     public String volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "El Helicoptero Grua con un costo de  " + super.getCostoDeVuelo() + " está volando";
     }
    
     
